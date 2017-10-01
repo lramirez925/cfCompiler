@@ -43,7 +43,7 @@ echo	"   Compile   "
 echo	".,;:=/|\=:;,."
 echo	".,;:=/|\=:;,."
 _JAVACMD=$JAVA_HOME
-${_JAVACMD} -cp "$J2EEJAR:$WEBINF/lib/cfmx_bootstrap.jar:$WEBINF/lib/*" -Dcoldfusion.classPath=$CFUSION_HOME/lib/updates,$CFUSION_HOME/lib -Dcoldfusion.libPath=$CFUSION_HOME/lib coldfusion.tools.CommandLineInvoker Compiler -deploy -webinf $WEBINF -webroot $WWWROOT -cfroot $CFUSION_HOME -srcdir $APP -deploydir $APP_COMPILED
+${_JAVACMD} -cp "$J2EEJAR:$WEBINF/lib/cfmx_bootstrap.jar:$WEBINF/lib/cfx.jar" -Dcoldfusion.classPath=$CFUSION_HOME/lib/updates,$CFUSION_HOME/lib -Dcoldfusion.libPath=$CFUSION_HOME/lib coldfusion.tools.CommandLineInvoker Compiler -deploy -webinf $WEBINF -webroot $WWWROOT -cfroot $CFUSION_HOME -srcdir $APP -deploydir $APP_COMPILED
 
 echo	".,;:=/|\=:;,."
 echo	".,;:=/|\=:;,."

@@ -1,5 +1,5 @@
 {
-    "name":"Coldfusion compiler",
+    "name":"compile batch",
     "version":"0.0.0",
     "author":"",
     "location":"",
@@ -10,8 +10,8 @@
         "URL":""
     },
     "bugs":"",
-    "slug":"cfCompiler",
-    "shortDescription":"A sweet package",
+    "slug":"cfCompilePassAll",
+    "shortDescription":"A package which contains the cfcompile batch and shell scripts.",
     "description":"",
     "instructions":"",
     "changelog":"",
@@ -31,13 +31,13 @@
         
     ],
     "dependencies":{
-        "cfCompilePassAll":"git://github.com/lramirez925/CFCompile-Pass-All.git"
+        
     },
     "devDependencies":{
         
     },
     "installPaths":{
-        "cfCompilePassAll":"cfCompilePassAll"
+        
     },
     "scripts":{
         
@@ -46,23 +46,5 @@
         "**/.*",
         "test",
         "tests"
-    ],
-    "testbox":{
-        "runner":[
-            {
-                "default":""
-            }
-        ],
-        "labels":"",
-        "reporter":"",
-        "bundles":"",
-        "recurse":true,
-        "directory":"tests.specs",
-        "testBundles":"",
-        "testSuites":"",
-        "testSpecs":"",
-        "verbose":true,
-        "watchDelay":500,
-        "watchPaths":"**.cfc"
-    }
+    ]
 }

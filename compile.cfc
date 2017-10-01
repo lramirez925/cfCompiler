@@ -21,7 +21,7 @@ component accessors=true {
         print.line("WWWROOT: #WWWROOT#");
         print.line("JAVA_HOME: #JAVA_HOME#");
 
-        var cfcompile = fileSystemUtil.resolvePath( "./cfcompile.sh" );
+        var cfcompile = fileSystemUtil.resolvePath( "./cfCompilePassAll/cfcompile-pass-all.sh" );
         command('!sh #cfcompile#').params(CFUSION_HOME,classPath,WEBINF,WWWROOT,APP,APP_COMPILED,JAVA_HOME).run(echo=true);
 
     }
