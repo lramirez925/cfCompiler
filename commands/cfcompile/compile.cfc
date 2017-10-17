@@ -2,6 +2,7 @@ component accessors=true {
     
     function run(string pathToCompile="", string pathToCompileTo="", string serverName = '', boolean verbose = false) {
         var serverDetails ={};
+
         // If there's a name, check for a server with that name
 		if( arguments.serverName.len() ) {
 			serverDetails =  getInstance( 'serverService' ).resolveServerDetails( { name : arguments.serverName } );
@@ -22,6 +23,7 @@ component accessors=true {
         var JAVA_HOME = serverJson.javaHome.trim();
         var APP = fileSystemUtil.resolvePath( pathToCompile );
         var APP_COMPILED = arguments.pathToCompileTo;
+        
         if(!len(APP_COMPILED)) {
             APP_COMPILED = fileSystemUtil.resolvePath( "#pathToCompile#_compiled" );
         }
@@ -30,6 +32,10 @@ component accessors=true {
         var classPath = "#J2EEJAR#:#WEBINF#\lib\*";
 
         var cfcompile = fileSystemUtil.resolvePath( "/cfCompilePassAll/cfcompile-pass-all.sh" );
+        if(findNoCase('wind', server.os.name)) {
+            cfcompile = fileSystemUtil.resolvePath( "/cfCompilePassAll/cfcompile-pass-all.bat" );
+        } 
+
         print.line("J2EEJAR: #J2EEJAR#")
             .line("CFUSION_HOME: #CFUSION_HOME#")
             .line("WEBINF: #WEBINF#")
