@@ -29,12 +29,14 @@ component accessors=true {
         }
 
         var J2EEJAR = getInstance( 'HomeDir@constants' ) & '/lib/runwar-3.6.1-SNAPSHOT.jar';
-        var classPath = "#J2EEJAR#:#WEBINF#\lib\*";
+        var classPath = "#J2EEJAR#:#WEBINF#lib/*";
 
-        var cfcompile = fileSystemUtil.resolvePath( "/cfCompilePassAll/cfcompile-pass-all.sh" );
-        if(findNoCase('wind', server.os.name)) {
-            cfcompile = fileSystemUtil.resolvePath( "/cfCompilePassAll/cfcompile-pass-all.bat" );
+        var cfcompile =  "/cfCompilePassAll/cfcompile-pass-all.sh";
+        if(fileSystemUtil.isWindows()) {
+            cfcompile = "/cfCompilePassAll/cfcompile-pass-all.bat";
         } 
+
+        cfcompile = expandPath(cfcompile);
 
         print.line("J2EEJAR: #J2EEJAR#")
             .line("CFUSION_HOME: #CFUSION_HOME#")
@@ -44,8 +46,8 @@ component accessors=true {
             .line("WWWROOT: #WWWROOT#")
             .line("JAVA_HOME: #JAVA_HOME#")
             .line("CFCOMPILE Path: #cfcompile#").toConsole();
-
-        command('!sh #cfcompile#').params(CFUSION_HOME,classPath,WEBINF,WWWROOT,APP,APP_COMPILED,JAVA_HOME).run(echo=arguments.verbose);
+  
+        command('!#JAVA_HOME# -cp "#classPath#:#WEBINF#/lib/cfmx_bootstrap.jar:#WEBINF#/lib/cfx.jar" -Dcoldfusion.classPath=#CFUSION_HOME#/lib/updates,#CFUSION_HOME#/lib -Dcoldfusion.libPath=#CFUSION_HOME#/lib coldfusion.tools.CommandLineInvoker Compiler -deploy -webinf "#WEBINF#" -webroot "#WWWROOT#" -cfroot "#CFUSION_HOME#" -srcdir "#APP#" -deploydir "#APP_COMPILED#"').run(echo=arguments.verbose);
 
     }
 }

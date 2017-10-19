@@ -31,13 +31,11 @@
         
     ],
     "dependencies":{
-        "cfCompilePassAll":"git://github.com/lramirez925/CFCompile-Pass-All.git"
     },
     "devDependencies":{
         
     },
     "installPaths":{
-        "cfCompilePassAll":"modules/cfCompilePassAll"
     },
     "scripts":{
         
