@@ -5,7 +5,7 @@ component {
 	this.cfmapping			= "commandbox-cfcompile";
 	this.autoMapModels		= true;
 	// Need these loaded up first so I can do my job.
-	this.dependencies 		= [ 'cfCompilePassAll' ];
+	this.dependencies 		= [  ];
 
 	function configure() {
 		/*settings = {
