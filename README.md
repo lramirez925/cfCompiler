@@ -1,6 +1,6 @@
 # cfCompiler
 Coldfusion compiler for command box
-
+https://travis-ci.org/lramirez925/cfCompiler.svg?branch=master
 ## To Use:
 1. run the following command in the box environment. 
     * install git://github.com/lramirez925/cfCompiler.git
