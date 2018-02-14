@@ -31,11 +31,13 @@
         
     ],
     "dependencies":{
+        "testbox":"^2.6.0+156"
     },
     "devDependencies":{
-        
+        "testbox":"folder:/Users/lonnieramirez/Documents/Projects/cfCompiler/testbox/"
     },
     "installPaths":{
+        "testbox":"testbox/"
     },
     "scripts":{
         
@@ -45,22 +47,7 @@
         "test",
         "tests"
     ],
-    "testbox":{
-        "runner":[
-            {
-                "default":""
-            }
-        ],
-        "labels":"",
-        "reporter":"",
-        "bundles":"",
-        "recurse":true,
-        "directory":"tests.specs",
-        "testBundles":"",
-        "testSuites":"",
-        "testSpecs":"",
-        "verbose":true,
-        "watchDelay":500,
-        "watchPaths":"**.cfc"
+    "testbox" : {
+        "runner":"http://127.0.0.1:8181/tests/runner.cfm"
     }
 }

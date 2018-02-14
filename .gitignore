@@ -1,4 +1,7 @@
 app/
-app_2/
+app_compile/
 cfCimpilePassAll/
 modules/
+testbox/
+tests/results
+**.DS_Store

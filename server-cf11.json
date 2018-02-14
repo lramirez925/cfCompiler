@@ -1,0 +1,11 @@
+{
+    "app":{
+        "cfengine":"adobe@11"
+    },
+    "name":"cf11",
+    "web":{
+        "http":{
+            "port":"8181"
+        }
+    }
+}
